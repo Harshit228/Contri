@@ -1,0 +1,396 @@
+/* Header Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+.bg {
+    /* The image used */
+     /* Make sure the .bg div takes up the full screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Put the image behind the content */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    align-items: center;
+}
+
+.navbar div, .navbar a {
+    margin: 0 5px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.5s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.menu-items {
+    display: flex;
+    alignment: left;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Updated hamburger styles */
+.hamburger {
+    display: none; /* will be shown in media query for mobile */
+    cursor: pointer;
+}
+
+.hamburger .line {
+    display: block;
+    width: 30px; /* Updated width */
+    height: 3px; /* Updated height */
+    background-color: #ecf0f1;
+    margin: 8px auto; /* Updated margin for spacing */
+    transition: all 0.3s ease-in-out; /* Updated transition for smooth animation */
+}
+
+/* Hamburger hover effect */
+.hamburger:hover {
+    cursor: pointer;
+}
+
+/* Hamburger active state */
+#hamburger-5.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-5.is-active .line:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+}
+
+#hamburger-5.is-active .line:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+@media only screen and (max-width: 600px) {
+    .menu-items {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 50%;
+        background-color: #333;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        max-height: 0;
+        opacity: 0;
+        z-index: 1000;
+    }
+
+    .menu-items.show {
+        max-height: 500px;
+        opacity: 1;
+        display: flex;
+    }
+
+    .menu-items a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #555;
+        transition: opacity 0.5s ease, transform 0.5s ease-out;
+    }
+
+    .menu-items.show a {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .menu-icon, .hamburger {
+        display: block;
+    }
+}
+
+
+/* Add background image styles to the wrapper */
+.wrapper {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Occupy full width of the viewport */
+    height: 100vh; /* Occupy full height of the viewport */
+    position: relative; /* Ensure relative positioning for child elements */
+
+}
+
+
+.community-header {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto; /* Centers the section if it has a width */
+    width: 53%; /* Adjust the width as needed */
+
+}
+
+.community-footer {
+    text-align: center;
+    color: white; /* Ensure text is contrasting against the background */
+    padding: 20px; /* Add padding for better readability */
+    margin-top: 20px; /* Adjust margin to position the div within the viewport */
+    position: absolute;
+    width: 90%;
+    top: calc(55% + 120px); /* Adjust top position to place it below the container */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the community-header is above the container */
+    margin-top: 6.5%;
+}
+
+h3 {
+    color: hsla(0, 0%, 0%, 0.5);
+}
+
+#highlightable {
+    transition: background-color 0.5s ease-in-out; /* Smooth transition for 0.5 seconds */
+}
+
+/* Main Content Styles */
+.container {
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 90%;
+    margin-top: 3%;
+}
+
+
+.separator {
+    border-left: 4px solid #888;
+    height: auto;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.05); /* Light gray background with transparency */
+    color: #0C0C0C; /* Dark gray text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    backdrop-filter: blur(45px);
+    text-align: justify;
+
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+#large-contributions, #how-contributions, #why-contributions {
+    transition: transform 0.3s ease-in-out; /* Smooth transition for moving */
+}
+
+/* Hover and Scroll Down Animation Classes */
+.hover-down {
+    transform: translateY(5%); /* Move down */
+}
+
+.hover-up {
+    transform: translateY(-5%); /* Move up */
+}
+
+.btn {
+    display: inline-block;
+    background-color: rgba(54, 54, 54, 0.7); /* Light blackish gray */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #2b2b2b; /* Slightly darker on hover */
+    color: white; /* Ensures text remains white on hover */
+}
+
+/* Updated link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Start items at the top */
+    align-items: flex-end;
+}
+.PowerdBy {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0%;
+}
+
+.copyright {
+    margin-top: 2%;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start items at the top */
+    align-items: flex-end; /* Align items to the right */
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    /* Remove specific margins from individual links to control spacing globally */
+}
+
+/* Push the first link down to align with the image's middle */
+.footer-right .footer-link:first-child {
+    /* Adjust this value to align 'About Us' with the bottom of the image */
+    margin-top: 75px; /* Example value, adjust as needed */
+}
+
+
+/* Ensure spacing between the links */
+.footer-right .footer-link:not(:first-child) {
+    margin-top: 2%; /* Space between 'About Us' and 'Contact Us' */
+}
+
+.footer-signature {
+    margin-top: 2%; /* Pushes the signature to the bottom */
+    align-self: flex-end; /* Ensure right alignment */
+}
+
+/* Additional adjustments for left side to match right side's alignment */
+.footer-left {
+    align-items: flex-start; /* Align items to the left */
+}
+
+
+
+/* Additional mobile adjustments */
+@media (max-width: 1000px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .community-header {
+        position: relative;
+        margin-bottom: 30px;
+        order:1;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative; /* Adjusted to relative */
+        width: 90%;
+        margin-top: 3%;
+        order:2;
+    }
+
+    .content {
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 75%;
+        box-shadow: none;
+
+    }
+
+
+
+    .community-footer {
+        width: 90%; /* Adjust width for smaller screens */
+        position: relative; /* Changed to relative */
+        margin-top: 3%; /* Adjust spacing if needed */
+        order:3;
+        z-index: 2;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction:auto;
+        order: 4;
+        padding: 15px;
+        position: relative; /* Ensure the footer follows normal flow */
+
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-link {
+        font-size: 0.8em;
+    }
+
+    .footer-signature {
+        font-size: 0.8em;
+    }
+}
